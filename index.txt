@@ -1,0 +1,28 @@
+WebSight
+========
+
+With WebSight you can replace an image on a web site with a picture
+taken by your webcam. This only changes the way the web page looks on
+_your_ computer, and only until you reload the page. 
+
+WebSight is a [bookmarklet](http://en.wikipedia.org/wiki/Bookmarklet), to
+use it:
+
+ 1. Drag the bookmarklet link below to the bookmarks bar of your browser.
+ 2. Go to some web page.
+ 3. Click on the WebSight button in your bookmarks bar.
+ 4. After a few seconds you should see a message telling you to press 'OK'
+    and click on an image that you want to replace. Press OK.
+ 5. Click on an image.
+ 6. After allowing your webcam to take pictures, you'll see the webcam
+    video where first the selected image was.
+ 7. Press 'OK' again in the message box when you're done.
+ 8. That's it!
+
+Get the bookmarklet here: 
+<a href="javascript:void(0)" id="bookmarkletlink">WebSight</a>
+
+Feel free to practice on this image (also works if you just click the
+link above):   
+
+![Fractal image](fractal.jpg)

@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+    <head>
+        <!--    <link rel="shortcut icon" href="/favicon.png" type="image/png"> -->
+
+        <!-- <meta property="og:image" content="https://web-sight.appspot.com/icon.png" /> -->
+	<meta property="og:url" content="https://web-sight.appspot.com" />
+	<meta property="og:description" content="Swap an image with a webcam picture" />
+	<meta property="og:site_name" content="WebSight" />
+	<meta property="og:title" content="WebSight" />
+	
+	<meta itemprop="name" content="WebSight">
+	<meta itemprop="description" content="Swap an image with a webcam picture">
+    <!-- <meta itemprop="image" content="https://web-sight.appspot.com/icon.png"> -->
+        
+        <link rel="stylesheet" href="websight.css">
+        <script id="websightbookmarklet">
+
+            function mainInitialized()
+            {
+                console.log("Loaded main");
+                
+                window.initializedWebSightBookmarklet = true;
+                window.initializingWebSightBookmarklet = false;
+                setTimeout(function() { webSightBookmarklet(); }, 0);
+            }
+
+            function initBookmarklet()
+            {
+                var s = document.createElement("script");
+                
+                s.src = "https://web-sight.appspot.com/maincode.js";
+                s.onload = mainInitialized;
+
+                document.body.appendChild(s);
+            }
+
+            function webSightBookmarklet()
+            {
+                if (window.initializingWebSightBookmarklet)
+                    return;
+
+                if (!window.initializedWebSightBookmarklet)
+                {
+                    window.initializingWebSightBookmarklet = true;
+                    initBookmarklet();
+                    return;
+                }
+
+                maincode.run();
+            }
+        </script>
+        <script>
+            function run()
+            {
+                var elem = document.getElementById("websightbookmarklet");
+                var data = elem.innerHTML;
+
+                data = "void((function() { " + data + "\nwebSightBookmarklet(); })())";
+
+                elem = document.getElementById("bookmarkletlink");
+                elem.setAttribute("href", "javascript:" + encodeURIComponent(data));
+            }
+        </script>
+    </head>
+    <body onload="run()">
+
+<!-- -->
+
+<h1>WebSight</h1>
+
+<p>With WebSight you can replace an image on a web site with a picture
+taken by your webcam. This only changes the way the web page looks on
+<em>your</em> computer, and only until you reload the page. </p>
+
+<p>WebSight is a <a href="http://en.wikipedia.org/wiki/Bookmarklet">bookmarklet</a>, to
+use it:</p>
+
+<ol>
+<li>Drag the bookmarklet link below to the bookmarks bar of your browser.</li>
+<li>Go to some web page.</li>
+<li>Click on the WebSight button in your bookmarks bar.</li>
+<li>After a few seconds you should see a message telling you to press 'OK'
+and click on an image that you want to replace. Press OK.</li>
+<li>Click on an image.</li>
+<li>After allowing your webcam to take pictures, you'll see the webcam
+video where first the selected image was.</li>
+<li>Press 'OK' again in the message box when you're done.</li>
+<li>That's it!</li>
+</ol>
+
+<p>Get the bookmarklet here: 
+<a href="javascript:void(0)" id="bookmarkletlink">WebSight</a></p>
+
+<p>Feel free to practice on this image (also works if you just click the
+link above):   </p>
+
+<p><img src="fractal.jpg" alt="Fractal image" title="" /></p>
+
+<!-- -->
+
+    </body>
+</html>
+
