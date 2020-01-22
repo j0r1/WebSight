@@ -61,7 +61,7 @@ var CameraImage = function()
 
                 m_video = document.createElement("video");
                 m_video.setAttribute("autoplay","true");
-                m_video.src = window.URL.createObjectURL(stream);
+                m_video.srcObject = stream;
 
                 m_stream = stream;
                 //document.body.appendChild(m_video);
